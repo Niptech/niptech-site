@@ -1,0 +1,17 @@
+
+@(episode: play.api.libs.json.JsValue)
+
+@import play.api.libs.json._
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@((episode \ "title").as[String])</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+            @Html((episode \ "content").as[String])
+    </body>
+</html>
