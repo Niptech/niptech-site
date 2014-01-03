@@ -12,6 +12,7 @@
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
+            <h2><a href="/">Retour</a></h2>
             @for( ep <- (episodes \ "posts").as[List[JsValue]]) {
             <div style="border: 1px solid black;">
                 @Html((ep \ "content").as[String].replaceAll("Read more",""))
