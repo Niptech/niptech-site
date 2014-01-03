@@ -36,7 +36,7 @@ object WordpressAPI {
         }
     }
 
-  def getLatestEpisodes(podcast: String, n: Int) = wcmRq(s"get_category_posts&slug=$podcast&count=$n")
+  def getLatestEpisodes(podcast: String, page: Int, count: Int) = wcmRq(s"get_category_posts&slug=$podcast&page=$page&count=$count")
 
   def getEpisodeById(id: Int) = wcmRq(s"get_post&id=$id")
 

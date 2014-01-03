@@ -5,6 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /detail/:id                 controllers.Application.displayEpisode(id: Int)
+GET     /:podcast                   controllers.Application.episodeList(podcast, page:Int ?= 1, count:Int ?= 5)
 GET     /test                       controllers.Application.test
 
 # Map static resources from the /public folder to the /assets URL path

@@ -21,6 +21,13 @@ object Application extends Controller {
     }
   )
 
+  def episodeList(podcast: String, page: Int, count: Int) = Action.async(
+    WordpressAPI.getLatestEpisodes(podcast, page, count).map {
+      res =>
+        Ok(views.html.episodeList(res))
+    }
+  )
+
   def test = Action.async(
     WS.url("http://www.niptech.com/?json=get_post&id=3357")
       .get
