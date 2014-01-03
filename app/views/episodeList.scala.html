@@ -16,6 +16,7 @@
             @for( ep <- (episodes \ "posts").as[List[JsValue]]) {
             <div style="border: 1px solid black;">
                 @Html((ep \ "content").as[String].replaceAll("Read more",""))
+                @controllers.Application.preloadLink("/detail/"+((ep \ "id").as[Int]))
             <a href='/detail/@((ep \ "id").as[Int])'>Détail</a>
             </div>
             <br/>
