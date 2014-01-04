@@ -16,7 +16,7 @@ object Application extends Controller {
   def index = Action {
     implicit request =>
       preloadEpisodesList
-      Ok(views.html.index(""))
+      Ok(views.html.index())
   }
 
   val port = conf.getString("http.port").getOrElse("80")
